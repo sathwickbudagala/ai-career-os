@@ -1,5 +1,6 @@
 import './Dashboard.css';
 import ApplicationTracker from './ApplicationTracker';
+import InterviewScheduler from './InterviewScheduler';
 
 function Dashboard() {
   return (
@@ -39,6 +40,7 @@ function Dashboard() {
       </div>
 
       <ApplicationTracker />
+      <InterviewScheduler />
 
     </div>
   );
