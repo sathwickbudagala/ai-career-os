@@ -1,0 +1,127 @@
+.tracker-container {
+  padding: 40px;
+}
+
+.tracker-container h2 {
+  font-size: 24px;
+  color: #0f3460;
+  margin-bottom: 8px;
+}
+
+.tracker-container > p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.add-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.add-form input,
+.add-form select {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  flex: 1;
+  min-width: 150px;
+}
+
+.add-form input:focus,
+.add-form select:focus {
+  border-color: #0f3460;
+}
+
+.add-form button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #0f3460, #533483);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.empty-message {
+  color: #aaa;
+  text-align: center;
+  padding: 40px;
+  font-size: 14px;
+}
+
+.application-card {
+  background: white;
+  padding: 20px 24px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.app-info h3 {
+  font-size: 16px;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.app-info p {
+  font-size: 13px;
+  color: #888;
+}
+
+.app-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.applied {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.status.interview {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.status.offer {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status.rejected {
+  background: #fce4ec;
+  color: #c62828;
+}
+
+.delete-button {
+  padding: 6px 14px;
+  background: #fce4ec;
+  color: #c62828;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
