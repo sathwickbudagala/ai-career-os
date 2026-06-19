@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import './InterviewScheduler.css';
 
-function InterviewScheduler() {
-  const [interviews, setInterviews] = useState([]);
+function InterviewScheduler({ interviews, setInterviews }) {
   const [company, setCompany] = useState('');
   const [role, setRole] = useState('');
   const [date, setDate] = useState('');

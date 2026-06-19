@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import './ApplicationTracker.css';
 
-function ApplicationTracker() {
-  const [applications, setApplications] = useState([]);
+function ApplicationTracker({ applications, setApplications }) {
   const [company, setCompany] = useState('');
   const [role, setRole] = useState('');
   const [status, setStatus] = useState('Applied');
