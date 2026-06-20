@@ -1,21 +1,21 @@
 import './Navbar.css';
 
-function Navbar({ activePage, setActivePage }) {
+function Navbar({ activePage, setActivePage, onLogout }) {
   const navItems = [
     { id: 'dashboard', label: '🏠 Dashboard' },
     { id: 'applications', label: '📋 Applications' },
     { id: 'interviews', label: '📅 Interviews' },
     { id: 'skills', label: '💡 Skills' },
+    { id: 'goals', label: '🎯 Goals' },
+    { id: 'resume', label: '📄 Resume Score' },
   ];
 
   return (
     <div className="navbar">
-
       <div className="navbar-brand">
         <h2>AI Career OS</h2>
         <p>Your personal career dashboard</p>
       </div>
-
       <div className="navbar-links">
         {navItems.map((item) => (
           <button
@@ -26,8 +26,10 @@ function Navbar({ activePage, setActivePage }) {
             {item.label}
           </button>
         ))}
+        <button className="logout-button" onClick={onLogout}>
+          🚪 Logout
+        </button>
       </div>
-
     </div>
   );
 }

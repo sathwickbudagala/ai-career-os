@@ -11,6 +11,14 @@ function LoginPage({ onLogin }) {
       setError('Please enter both email and password');
       return;
     }
+    if (!email.includes('@')) {
+      setError('Please enter a valid email address');
+      return;
+    }
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters');
+      return;
+    }
     onLogin();
   }
 
@@ -18,11 +26,12 @@ function LoginPage({ onLogin }) {
     <div className="login-container">
       <div className="login-box">
 
+        <div className="login-logo">🚀</div>
         <h1>AI Career OS</h1>
-        <p>Your personal career dashboard</p>
+        <p>Your personal career operating system</p>
 
         <div className="input-group">
-          <label>Email</label>
+          <label>Email Address</label>
           <input
             type="email"
             placeholder="Enter your email"
@@ -41,9 +50,15 @@ function LoginPage({ onLogin }) {
           />
         </div>
 
-        {error && <p className="error-message">{error}</p>}
+        {error && <p className="error-message">⚠️ {error}</p>}
 
-        <button className="login-button" onClick={handleLogin}>Login</button>
+        <button className="login-button" onClick={handleLogin}>
+          Login to Dashboard →
+        </button>
+
+        <p className="login-hint">
+          Use any email and password (6+ characters) to login
+        </p>
 
       </div>
     </div>

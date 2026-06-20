@@ -5,8 +5,10 @@ import DashboardHome from './DashboardHome';
 import ApplicationTracker from './ApplicationTracker';
 import InterviewScheduler from './InterviewScheduler';
 import SkillsTracker from './SkillsTracker';
+import GoalsTracker from './GoalsTracker';
+import ResumeScore from './ResumeScore';
 
-function Dashboard() {
+function Dashboard({ onLogout }) {
   const [applications, setApplications] = useState([]);
   const [interviews, setInterviews] = useState([]);
   const [activePage, setActivePage] = useState('dashboard');
@@ -17,6 +19,7 @@ function Dashboard() {
       <Navbar
         activePage={activePage}
         setActivePage={setActivePage}
+        onLogout={onLogout}
       />
 
       {activePage === 'dashboard' && (
@@ -42,6 +45,14 @@ function Dashboard() {
 
       {activePage === 'skills' && (
         <SkillsTracker />
+      )}
+
+      {activePage === 'goals' && (
+        <GoalsTracker />
+      )}
+
+      {activePage === 'resume' && (
+        <ResumeScore />
       )}
 
     </div>
