@@ -7,6 +7,7 @@ import InterviewScheduler from './InterviewScheduler';
 import SkillsTracker from './SkillsTracker';
 import GoalsTracker from './GoalsTracker';
 import ResumeScore from './ResumeScore';
+import Footer from './Footer';
 
 function Dashboard({ onLogout }) {
   const [applications, setApplications] = useState([]);
@@ -54,6 +55,8 @@ function Dashboard({ onLogout }) {
       {activePage === 'resume' && (
         <ResumeScore />
       )}
+
+      <Footer />
 
     </div>
   );
