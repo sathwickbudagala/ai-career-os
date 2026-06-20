@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import DashboardHome from './DashboardHome';
 import ApplicationTracker from './ApplicationTracker';
 import InterviewScheduler from './InterviewScheduler';
+import SkillsTracker from './SkillsTracker';
 
 function Dashboard() {
   const [applications, setApplications] = useState([]);
@@ -37,6 +38,10 @@ function Dashboard() {
           interviews={interviews}
           setInterviews={setInterviews}
         />
+      )}
+
+      {activePage === 'skills' && (
+        <SkillsTracker />
       )}
 
     </div>

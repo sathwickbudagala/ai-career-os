@@ -5,6 +5,7 @@ function Navbar({ activePage, setActivePage }) {
     { id: 'dashboard', label: '🏠 Dashboard' },
     { id: 'applications', label: '📋 Applications' },
     { id: 'interviews', label: '📅 Interviews' },
+    { id: 'skills', label: '💡 Skills' },
   ];
 
   return (
