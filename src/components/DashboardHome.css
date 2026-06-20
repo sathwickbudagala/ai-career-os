@@ -1,0 +1,182 @@
+.home-container {
+  padding: 40px;
+}
+
+.welcome-section {
+  margin-bottom: 32px;
+}
+
+.welcome-section h2 {
+  font-size: 28px;
+  color: #0f3460;
+  margin-bottom: 8px;
+}
+
+.welcome-section p {
+  color: #888;
+  font-size: 14px;
+}
+
+.stats-container {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.stat-card h3 {
+  font-size: 36px;
+  color: #0f3460;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  color: #888;
+  font-size: 13px;
+}
+
+.goal-container {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.goal-header h3 {
+  font-size: 16px;
+  color: #0f3460;
+}
+
+.goal-header span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #533483;
+}
+
+.goal-container p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 72%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f3460, #533483);
+  border-radius: 6px;
+}
+
+.summary-container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  flex: 1;
+  min-width: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h3 {
+  font-size: 16px;
+  color: #0f3460;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.summary-company {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 2px;
+}
+
+.summary-role {
+  font-size: 12px;
+  color: #888;
+}
+
+.empty-message {
+  color: #aaa;
+  font-size: 13px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status.applied {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.status.interview {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.status.offer {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status.rejected {
+  background: #fce4ec;
+  color: #c62828;
+}
+
+.date-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #533483;
+}
