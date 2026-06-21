@@ -9,7 +9,7 @@ import GoalsTracker from './GoalsTracker';
 import ResumeScore from './ResumeScore';
 import Footer from './Footer';
 
-function Dashboard({ onLogout }) {
+function Dashboard({ user, onLogout }) {
   const [applications, setApplications] = useState([]);
   const [interviews, setInterviews] = useState([]);
   const [activePage, setActivePage] = useState('dashboard');
@@ -27,6 +27,7 @@ function Dashboard({ onLogout }) {
         <DashboardHome
           applications={applications}
           interviews={interviews}
+          user={user}
         />
       )}
 

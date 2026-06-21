@@ -1,6 +1,6 @@
 import './DashboardHome.css';
 
-function DashboardHome({ applications, interviews }) {
+function DashboardHome({ applications, interviews, user }) {
   const offers = applications.filter(
     (app) => app.status === 'Offer'
   ).length;
@@ -13,7 +13,7 @@ function DashboardHome({ applications, interviews }) {
     <div className="home-container">
 
       <div className="welcome-section">
-        <h2>Welcome back, Sathwick! 👋</h2>
+        <h2>Welcome back, {user?.name}! 👋</h2>
         <p>Here is your career progress at a glance</p>
       </div>
 
@@ -50,7 +50,7 @@ function DashboardHome({ applications, interviews }) {
           <h3>Current Goal</h3>
           <span>72%</span>
         </div>
-        <p>Become a React Developer</p>
+        <p>{user?.goal || 'Land my dream job'}</p>
         <div className="progress-bar-container">
           <div className="progress-bar"></div>
         </div>
@@ -64,7 +64,7 @@ function DashboardHome({ applications, interviews }) {
             <p className="empty-message">No applications yet</p>
           )}
           {applications.slice(-3).reverse().map((app) => (
-            <div className="summary-item" key={app.id}>
+            <div className="summary-item" key={app._id || app.id}>
               <div>
                 <p className="summary-company">{app.company}</p>
                 <p className="summary-role">{app.role}</p>
@@ -85,7 +85,7 @@ function DashboardHome({ applications, interviews }) {
             .filter((i) => new Date(i.date) >= new Date())
             .slice(0, 3)
             .map((interview) => (
-              <div className="summary-item" key={interview.id}>
+              <div className="summary-item" key={interview._id || interview.id}>
                 <div>
                   <p className="summary-company">{interview.company}</p>
                   <p className="summary-role">{interview.role}</p>

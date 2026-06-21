@@ -4,14 +4,31 @@ import Dashboard from './components/Dashboard';
 import './App.css';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const savedUser = localStorage.getItem('user');
+    const savedToken = localStorage.getItem('token');
+
+    if (savedUser && savedToken) {
+      setUser(JSON.parse(savedUser));
+    }
+
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
   }, []);
+
+  function handleLogin(userData) {
+    setUser(userData);
+  }
+
+  function handleLogout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setUser(null);
+  }
 
   if (isLoading) {
     return (
@@ -26,11 +43,11 @@ function App() {
     );
   }
 
-  if (isLoggedIn) {
-    return <Dashboard onLogout={() => setIsLoggedIn(false)} />;
+  if (user) {
+    return <Dashboard user={user} onLogout={handleLogout} />;
   }
 
-  return <LoginPage onLogin={() => setIsLoggedIn(true)} />;
+  return <LoginPage onLogin={handleLogin} />;
 }
 
 export default App;

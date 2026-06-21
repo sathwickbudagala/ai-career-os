@@ -1,14 +1,22 @@
 import { useState } from 'react';
+import { login, register } from '../services/api';
 import './LoginPage.css';
 
 function LoginPage({ onLogin }) {
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  function handleLogin() {
-    if (email === '' || password === '') {
+  async function handleSubmit() {
+    if (!email || !password) {
       setError('Please enter both email and password');
+      return;
+    }
+    if (isRegistering && !name) {
+      setError('Please enter your name');
       return;
     }
     if (!email.includes('@')) {
@@ -19,7 +27,27 @@ function LoginPage({ onLogin }) {
       setError('Password must be at least 6 characters');
       return;
     }
-    onLogin();
+
+    setLoading(true);
+    setError('');
+
+    try {
+      let response;
+      if (isRegistering) {
+        response = await register({ name, email, password });
+      } else {
+        response = await login({ email, password });
+      }
+
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+      onLogin(response.data.user);
+
+    } catch (err) {
+      setError(err.response?.data?.message || 'Something went wrong');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -28,7 +56,19 @@ function LoginPage({ onLogin }) {
 
         <div className="login-logo">🚀</div>
         <h1>AI Career OS</h1>
-        <p>Your personal career operating system</p>
+        <p>{isRegistering ? 'Create your account' : 'Welcome back!'}</p>
+
+        {isRegistering && (
+          <div className="input-group">
+            <label>Full Name</label>
+            <input
+              type="text"
+              placeholder="Enter your full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+        )}
 
         <div className="input-group">
           <label>Email Address</label>
@@ -52,12 +92,22 @@ function LoginPage({ onLogin }) {
 
         {error && <p className="error-message">⚠️ {error}</p>}
 
-        <button className="login-button" onClick={handleLogin}>
-          Login to Dashboard →
+        <button
+          className="login-button"
+          onClick={handleSubmit}
+          disabled={loading}
+        >
+          {loading ? 'Please wait...' : isRegistering ? 'Create Account' : 'Login →'}
         </button>
 
-        <p className="login-hint">
-          Use any email and password (6+ characters) to login
+        <p className="toggle-auth">
+          {isRegistering ? 'Already have an account?' : "Don't have an account?"}
+          <span onClick={() => {
+            setIsRegistering(!isRegistering);
+            setError('');
+          }}>
+            {isRegistering ? ' Login' : ' Register'}
+          </span>
         </p>
 
       </div>

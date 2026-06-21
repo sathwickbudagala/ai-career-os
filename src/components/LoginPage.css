@@ -91,3 +91,21 @@
   color: #aaa;
   text-align: center;
 }
+
+.toggle-auth {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+}
+
+.toggle-auth span {
+  color: #0f3460;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.toggle-auth span:hover {
+  text-decoration: underline;
+}
