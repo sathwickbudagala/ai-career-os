@@ -125,3 +125,39 @@
   font-weight: 600;
   cursor: pointer;
 }
+.loading-message {
+  padding: 40px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+.status-select {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.status-select.applied {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-select.interview {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.status-select.offer {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-select.rejected {
+  background: #fce4ec;
+  color: #c62828;
+}
