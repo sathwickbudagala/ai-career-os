@@ -8,6 +8,7 @@ function Navbar({ activePage, setActivePage, onLogout }) {
     { id: 'skills', label: '💡 Skills' },
     { id: 'goals', label: '🎯 Goals' },
     { id: 'resume', label: '📄 Resume Score' },
+    { id: 'ai', label: '🤖 AI Assistant' },
   ];
 
   return (

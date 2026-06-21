@@ -25,7 +25,7 @@ router.post('/advice', auth, async (req, res) => {
           content: message,
         },
       ],
-      model: 'llama3-8b-8192',
+      model: 'llama-3.3-70b-versatile',
       max_tokens: 1024,
     });
 
@@ -56,7 +56,7 @@ router.post('/interview-prep', auth, async (req, res) => {
           Give me the top 5 likely questions and how to answer them.`,
         },
       ],
-      model: 'llama3-8b-8192',
+      model: 'llama-3.3-70b-versatile',
       max_tokens: 1024,
     });
 
@@ -86,7 +86,7 @@ router.post('/resume-tips', auth, async (req, res) => {
           content: `Review this resume and give me specific improvement tips:\n\n${resumeText}`,
         },
       ],
-      model: 'llama3-8b-8192',
+      model: 'llama-3.3-70b-versatile',
       max_tokens: 1024,
     });
 

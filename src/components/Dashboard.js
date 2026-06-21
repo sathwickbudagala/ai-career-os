@@ -8,6 +8,7 @@ import SkillsTracker from './SkillsTracker';
 import GoalsTracker from './GoalsTracker';
 import ResumeScore from './ResumeScore';
 import Footer from './Footer';
+import AIAssistant from './AIAssistant';
 
 function Dashboard({ user, onLogout }) {
   const [applications, setApplications] = useState([]);
@@ -55,6 +56,10 @@ function Dashboard({ user, onLogout }) {
 
       {activePage === 'resume' && (
         <ResumeScore />
+      )}
+
+      {activePage === 'ai' && (
+        <AIAssistant />
       )}
 
       <Footer />
